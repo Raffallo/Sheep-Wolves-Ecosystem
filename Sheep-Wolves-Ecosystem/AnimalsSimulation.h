@@ -1,6 +1,17 @@
 #pragma once
 #include "TiledMap.h"
 
+struct IterationStats
+{
+    size_t iteration = 0;
+
+    size_t maleWolves = 0;
+    size_t femaleWolves = 0;
+
+    size_t maleSheep = 0;
+    size_t femaleSheep = 0;
+};
+
 class AnimalsSimulation
 {
 public:
@@ -18,6 +29,9 @@ private:
     void PopulateAnimals(TiledMap& map, const size_t sheepCount, const size_t wolvesCount) const;
     void MoveAnimals(const TiledMap& from, TiledMap& to) const;
     void ResolveIteration(TiledMap& map) const;
+    void CalculateIterationStats(const TiledMap& map, const size_t iterationIdx, IterationStats& stats) const;
+    void DisplayStats(const IterationStats& stats) const;
 
     std::vector<TiledMap> m_iterationHistory;// 0 = before iterations
+    std::vector<IterationStats> m_iterationStats;// 0 = before iterations
 };
