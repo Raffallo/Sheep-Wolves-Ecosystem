@@ -22,3 +22,4 @@ The simulation includes animal behaviors, reproduction rules, and statistics tra
      ```
      Iteration: x Total Animals: x (Wolves: x [M: x, F: x], Sheep: x [M: x, F: x])
      ```
+   - Simulation stores history and statistics of each iteration
